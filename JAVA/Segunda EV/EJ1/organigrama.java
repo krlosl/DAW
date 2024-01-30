@@ -71,6 +71,8 @@ public class organigrama {
 		System.out.println("El numero del jefe es: " + numjefe);
 		System.out.println("El nombre del empleado es: " + plant[buscar(plant,numero)][1]);
 		System.out.println("El nombre del jefe es: " + plant[buscar(plant,numjefe)][1]);
+
+		sc.close();
 	}
 
     public static int buscar(String [][] plant, String numero) {
