@@ -1,51 +1,57 @@
 package lib;
 
-public class fraccion {
+public class Fraccion {
 
     private int numerador;
     private int denominador;
 
-    public class fraccion {
+    public void fraccion() {
         this.numerador = 1;
         this.denominador = 1;
     }
-    public class fraccion(int num; int denom) {
+    //getters and setters
+    public int getNumerador() {
+        return numerador;
+    }
+    public int getDenominador() {
+        return denominador;
+    }
+    public int setNumerador() {
+        return numerador;
+    }
+    public int setDenominador() {
+        return denominador;
+    }
+    //getters and setters
+    public void fraccion(int num, int denom) {
         this.numerador = num;
         this.denominador = denom;
     }
-    public class invertir() {
-        num = denom;
-        denom = num;
+    public void invertir() {
+        int temp;
+        temp = numerador;
+        this.numerador = denominador;
+        this.denominador = temp;
     }
-    public class simplificar(int num, int denom) {
-        if(num%2) {
-            num / 2
+    public int mcd(int num, int denom) {
+        while (denom != 0) {
+            int temp2 = denom;
+            denom = num % denom;
+            num = temp2;
         }
-        if(num%3) {
-            num / 3
-        }
-        if(num%5) {
-            num / 5
-        }
-        if(denom%2) {
-        denom / 2
-        }
-        if(denom%3) {
-            denom / 3
-        }
-        if(denom%5) {
-            denom / 5
-        }
-        return num, denom;
+        return num;
     }
-    public class multiplicar(int num, int denom) {
-        num = num * denom;
-        denom = denom * num;
-        return num, denom;
+    public void simplificar(int num, int denom) {
+        int a = mcd(num, denom);
+        this.numerador = num / a;
+        this.denominador = denom /a;
     }
-    public class dividir(int num, int denom) {
-        num = num / denom;
-        denom = denom / num;
-        return num, denom;
+    public void multiplicar(int num, int denom, int mult) {
+        this.numerador = numerador * mult;
+        this.denominador = denominador * mult;
+    }
+    public void dividir(int num, int denom, int div) {
+        this.numerador = numerador / div;
+        this.denominador = denominador / div;
     }
 }
