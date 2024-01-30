@@ -49,6 +49,7 @@ public class TurnOMatik {
                 }
                 sc.next();
             }
+            sc.close();
         }
     }
 }
