@@ -60,5 +60,6 @@ public class CalcRPN {
                 stack.push(Double.valueOf(dato));
             }
         }
+        sc.close();
     }
 }
