@@ -3,26 +3,23 @@ package lib;
 public class Mesa {
 
     private String color;
-    private int npatas;
     private int ancho;
     private int largo;
     private String material;
 
+    public Mesa (String a_color, int a_npatas, int a_ancho, int a_largo, String a_material) {
+        
+        this.color = a_color;
+        this.ancho = a_ancho;
+        this.largo = a_largo;
+        this.material = a_material;
+    }
     public Mesa() {
         this.color = "Blanco";
-        this.npatas = 4;
         this.ancho = 100;
         this.largo = 100;
         this.material = "Madera";
 
-    }
-    public Mesa (String a_color, int a_npatas, int a_ancho, int a_largo, String a_material) {
-        
-        this.color = a_color;
-        this.npatas = a_npatas;
-        this.ancho = a_ancho;
-        this.largo = a_largo;
-        this.material = a_material;
     }
     public int area() {
         return this.ancho*this.largo;
