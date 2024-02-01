@@ -37,7 +37,7 @@ public class Tiempo {
         int sr = tiempo2.getSegundos() + this.segundos;
         int mr = tiempo2.getMinutos() + this.minutos;
         int hr = tiempo2.getHoras() + this.horas;
-    
+
         if (sr > 59) {
             int min = sr / 60;
             mr += min;
