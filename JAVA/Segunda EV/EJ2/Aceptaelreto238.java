@@ -45,7 +45,6 @@ public class Aceptaelreto238 {
                 for (int billete : billetesdados) {
                     dinerototal += billete;
                 }
-
                 System.out.println(dinerototal + ": " + billetesdados.toString().replaceAll("[\\[\\],]", ""));
             }
             System.out.println("---");
