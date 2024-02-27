@@ -1,7 +1,6 @@
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
-public class Division {
+public class ExtensionDivision {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -18,10 +17,6 @@ public class Division {
 
             int res = primero / segundo;
             System.out.println(res);
-        } catch (InputMismatchException e) {
-            System.out.println("Dato no numérico.");
-        } catch (ArithmeticException e) {
-            System.out.println("El denominador es distinto de 0.");
         } catch (Exception e) {
             System.out.println("Problemas con la división.");
         }
