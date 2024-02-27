@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.util.ArithmeticException;
 
 public class Division {
     public static void main(String[] args) {
@@ -16,7 +17,7 @@ public class Division {
             System.out.println("Dime el segundo: ");
             segundo = sc.nextInt();
 
-            int res = primero / segundo;
+            int res = divide(primero / segundo);
             System.out.println(res);
         } catch (InputMismatchException e) {
             System.out.println("Dato no numérico.");
@@ -25,6 +26,16 @@ public class Division {
         } catch (Exception e) {
             System.out.println("Problemas con la división.");
         }
-        sc.close();
+        
+        public static int divide(int nume, int denom) throws ArithmeticException{
+            try {
+                if (denom == 0) {
+                    throw new ArithmeticException("No se puede dividir por cero");
+                }
+                return nume / denom;
+            } catch (ArithmeticException e) {
+                throw e;
+            }
+        }
     }
 }
