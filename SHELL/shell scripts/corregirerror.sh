@@ -1,13 +1,23 @@
-#! /bin/bash
-clear
-for fichero in "$@"; do
-    if  [ "$fichero" -ge 1 -a "$fichero" -le 75 ]; then
-        for i in $(seq 1 $fichero): do
-            echo -in "*"
-        done
-        echo
+#!/bin/bash
+#corregir los errores del siguiente script
+#Corregir los errores del siguiente script.
+#    for i in *
+#    do
+#        TEST=who | grep $i`
+#        if [ ! "TEST" ]
+#        then
+#           echo "$I SI esta conectado"
+#        else
+#            echo "$i NO esta conectado"
+#   fi
+
+for i in *
+do
+    TEST=$(who | grep "$i")
+    if [ -n "$TEST" ]
+    then
+        echo "$i SI esta conectado"
     else
-        echo "El argumento $fichero no está dentro del rango permitido"
-        exit 1
+        echo "$i NO esta conectado"
     fi
 done
