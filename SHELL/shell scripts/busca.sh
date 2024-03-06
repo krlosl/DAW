@@ -8,3 +8,4 @@ if grep -p  "$nombre" /etc/passwd; then
 else
     echo "El usuario $nombre no existe en el fichero de nombres"
 fi
+echo
