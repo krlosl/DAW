@@ -1,11 +1,12 @@
-#LEE UN LOGIN POR TECLADO Y COMPRUEBA SI EL USUARIO ESTÁ CONECTADO AL SISTEMA
-#ESCRIBIENDO EL MENSAJE CORRESPONDIENTE
-#! /bin/bash
-clear
-for login in "$@"; do
-    if who -u \ grep -p " $login"; then
-        echo "El usuario $login está conectado"
+#modifica esta.sh para que los lea como parámetro
+#!/bin/bash
+for i in *
+do
+    TEST=$(who | grep "$i")
+    if [ -n "$TEST" ]
+    then
+        echo "$i SI esta conectado"
     else
-        echo "El usuario $login no está conectado"
+        echo "$i NO esta conectado"
     fi
 done

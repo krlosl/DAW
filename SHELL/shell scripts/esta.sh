@@ -8,3 +8,4 @@ if who -u | grep -p "$login"; then
 else
     echo "El usuario $login no está conectado al sistema"
 fi
+echo

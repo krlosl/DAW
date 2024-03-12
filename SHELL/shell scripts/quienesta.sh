@@ -2,6 +2,6 @@
 #! /bin/bash
 clear
 echo
-echo "Hay $(who | wc -l) usuarios conectados"
-echo "La fecha de hoy es $(date)"
+echo "Hay `who | wc -l` usuarios conectados"
+echo "Hoy es `date`"
 echo
