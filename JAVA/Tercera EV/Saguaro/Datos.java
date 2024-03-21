@@ -1,4 +1,6 @@
-public class Datos {
+import java.io.Serializable;
+
+public class Datos implements Serializable{
     private String OBJECT;
     private String CON;
     private String RA;
@@ -16,4 +18,45 @@ public class Datos {
     public void printdatos() {
         System.out.println("Object: " + OBJECT + "Con: " + CON + "RA: " + RA + "DEC: " + DEC + "MAG: " + MAG);
     }
+
+    public String getOBJECT() {
+        return OBJECT;
+    }
+
+    public void setOBJECT(String OBJECT) {
+        this.OBJECT = OBJECT;
+    }
+
+    public String getCON() {
+        return CON;
+    }
+
+    public void setCON(String CON) {
+        this.CON = CON;
+    }
+
+    public String getRA() {
+        return RA;
+    }
+
+    public void setRA(String RA) {
+        this.RA = RA;
+    }
+
+    public String getDEC() {
+        return DEC;
+    }
+
+    public void setDEC(String DEC) {
+        this.DEC = DEC;
+    }
+
+    public String getMAG() {
+        return MAG;
+    }
+
+    public void setMAG(String MAG) {
+        this.MAG = MAG;
+    }
+
 }

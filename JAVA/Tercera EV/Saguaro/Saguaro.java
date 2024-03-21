@@ -1,47 +1,50 @@
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.ObjectOutput;
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.io.IOException;
+
 
 public class Saguaro {
+    
     public static void main(String[] args) {
-        //pillo los dos archivos que hay que usar
-        File f = new File("SAC_DeepSky_Ver81_QCQ.TXT");
-        File bin = new File("SAC.bin");
-        String[] array;
-
+        //archivos que vamos a usar
+        File archivo = new File("SAC_DeepSky_Ver81_QCQ.TXT");
+        File binario = new File("SAC.bin");
+        
         try {
-            //leo el tocho, lo leo por lineas, y lo guardo en una variable
-            FileReader fr = new FileReader(f);
-            BufferedReader br = new BufferedReader(fr);
-            String line = br.readLine();
 
-            //lo pico
-            FileOutputStream fos = new FileOutputStream(bin);
+            String[] array;
+
+            FileReader fr = new FileReader(archivo);
+            BufferedReader br = new BufferedReader(fr);
+
+            String linea = br.readLine();
+
+            FileOutputStream fos = new FileOutputStream(binario);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
-            //si linea tiene algo entra
-            while (line != null) {
-                //reemplaza las barras y los espacios para que esté todo junto
-                String line2 = line.replaceAll("\"",  "").replaceAll(" ", "");
-                //lo corto por las comas para poder sacar cada cosa
-                array = line.split(",");
+            while(linea != null) {
+                String lineas = linea.replaceAll("\"", "");
+                array = lineas.split(",");
 
-                if (line.contains("GALXY") ) {
-                    //pinto los objetos según la posición en la que están
-                    Datos d = new Datos(array[0], array[3], array[4], array[5], array[6]);
+                if (lineas.contains("GALXY") ) {
 
-                    oos.writeObject(d);
+                    String test = array[0].replaceAll(" ", "");
+                    Datos a = new Datos(test, array[3], array[4], array[5], array[6]);
+
+                    oos.writeObject(a);
                 }
+                linea = br.readLine();
             }
             fr.close();
             br.close();
+
             fos.close();
             oos.close();
-            
-        } catch (Exception e) {
+
+            } catch(IOException e) {
             e.printStackTrace();
         }
     }
