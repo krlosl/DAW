@@ -24,5 +24,5 @@ do
         fi
     done
 done
-
-echo "Los números generados son: ${numeros[@]}"
+numeros_ordenados=($(for i in "${numeros[@]}"; do echo $i; done | sort -n))
+echo "Los números generados son: ${numeros_ordenados[@]}"
