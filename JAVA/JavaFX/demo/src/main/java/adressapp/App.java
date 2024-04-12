@@ -8,17 +8,48 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-public class App extends Application {
+public class MainApp extends Application {
 
     private Stage primaryStage;
     private BorderPane rootLayout;
+    
+    /**
+	 * The data as an observable list of Persons.
+	 */
+	private ObservableList<Person> personData = FXCollections.observableArrayList();
+
+	/**
+	 * Constructor
+	 */
+	public MainApp() {
+		// Add some sample data
+		personData.add(new Person("Hans", "Muster"));
+		personData.add(new Person("Ruth", "Mueller"));
+		personData.add(new Person("Heinz", "Kurz"));
+		personData.add(new Person("Cornelia", "Meier"));
+		personData.add(new Person("Werner", "Meyer"));
+		personData.add(new Person("Lydia", "Kunz"));
+		personData.add(new Person("Anna", "Best"));
+		personData.add(new Person("Stefan", "Meier"));
+		personData.add(new Person("Martin", "Mueller"));
+	}
+  
+	/**
+	 * Returns the data as an observable list of Persons. 
+	 * @return
+	 */
+	public ObservableList<Person> getPersonData() {
+		return personData;
+	}
 
     public void initRootLayout() {
         try {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("RootLayout.fxml"));
+            loader.setLocation(MainApp.class.getResource("RootLayout.fxml"));
             rootLayout = (BorderPane) loader.load();
             
             // Show the scene containing the root layout.
@@ -37,7 +68,7 @@ public class App extends Application {
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("PersonOverview.fxml"));
+            loader.setLocation(MainApp.class.getResource("PersonOverview.fxml"));
             AnchorPane personOverview = (AnchorPane) loader.load();
             
             // Set person overview into the center of root layout.
