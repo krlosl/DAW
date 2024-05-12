@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>RGR 3D DRUCK SERVICES</title>
+    <style>
+        td:nth-child(even){
+            background-color:cornflowerblue ;
+            color: black;
+        }
+        th{
+            background-color: blue;
+        }
+        /* Importación de la fuente Poppins con un peso de 600 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+#cabecera {
+    list-style-type: none;
+    /* para quitar los puntos de las etiquetas */
+    border-radius: 30px;
+    padding: 0 10px;
+    overflow: hidden;
+    background-color: #111;
+    font-size: 20px;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(42, 42, 99);
+    color: rgba(255, 255, 255, 0.781);
+    font-family: poppins;
+}
+
+h2 {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.829);
+}
+
+/* Para quitar el subrayado de los enlaces html */
+a {
+    text-decoration: none;
+}
+
+/* Estilos para los elementos de la barra de navegación */
+li {
+    float: left;
+}
+
+/* Estilos para los enlaces de la barra de navegación */
+li a {
+    display: block;
+    color: rgba(255, 255, 255, 0.829);
+    text-align: center;
+    padding: 8px 16px;
+}
+
+#productos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: 30px;
+}
+
+#productos div {
+    width: 45%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#productos img {
+    width: 50%;
+}
+
+#productos p {
+    text-align: center;
+    color: burlywood;
+}
+
+.card {
+    --bg: #39346d;
+    --contrast: #e2e0e0;
+    --grey: #93a1a1;
+    position: relative;
+    padding: 9px;
+    background-color: var(--bg);
+    border-radius: 20px;
+    /* Reducir un 40% del radio original */
+    margin-right: 200px;
+    /* Ajusta el margen derecho según tus necesidades */
+    margin-left: 200px;
+    /* Ajusta el margen izquierdo según tus necesidades */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+#botones {
+    margin-top: 250px;
+    text-align: center;
+    background-color: #111;
+    padding-bottom: 170px;
+    padding-top: 100px;
+}
+
+footer {
+    background-color: #111;
+    color: rgba(255, 255, 255, 0.829);
+    padding: 20px;
+    text-align: left;
+}
+
+/* Para quitar el subrayado de los elementos del footer */
+footer a {
+    color: rgba(255, 255, 255, 0.829);
+    text-decoration: none;
+}
+
+footer li {
+    float: none;
+    display: flex;
+}
+
+/* Copyright */
+#copy {
+    text-align: center;
+    font-size: 10px;
+}
+
+/* El bloque de cambiar el idioma */
+#lenguajeswitcher {
+    background-color: #111;
+    color: rgba(255, 255, 255, 0.829);
+    border-color: rgba(255, 255, 255, 0.829);
+}
+
+/* Estilos para los títulos h2 */
+/* El body de la página de pedidos */
+#cuerpo {
+    font-family: poppins;
+    background-color: rgb(42, 42, 99);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 130vh;
+}
+
+#forma {
+    background-color: rgb(42, 42, 99);
+    color: rgba(255, 255, 255, 0.829);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#metodoenvio {
+    padding: 10px;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.product {
+    width: 48%;
+    margin-bottom: 16px;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #725AC1;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #5ac17c00;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #5ac168;
+}
+
+button:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #5ac181;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+/* PÁGINA DE PREGUNTAS Y RESPUESTAS */
+#preguntasfrecuentes {
+    color: rgba(0, 0, 0, 0.719);
+    background-color: rgb(42, 42, 99);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+.faq-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 8px;
+}
+
+.faq-item:target .faq-answer {
+    display: block;
+    margin-top: 8px;
+    border-bottom: 1px solid;
+    padding: 16px 0;
+}
+
+.faq-question {
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 5px;
+}
+
+#borde-redondo {
+    border-radius: 25px;
+    border: 4px solid rgb(0, 0, 0);
+    padding: 20px;
+    width: auto;
+    height: auto;
+}
+#borde-fondo {
+    border-radius: 75px;
+    background: url(fondo.avif) no-repeat;
+    background-size: cover; /* This will make sure the image covers the entire element */
+    width: auto;
+    height: auto;
+    padding: 2%;
+}
+    </style>
+</head>
+<body>
+    <h5>
+        <ul id="cabecera"><b>
+            <!--ICONO DE CAMBIO DE IDIOMA-->
+            <li style="float: left;">
+                <select name="Idioma" id="lenguajeswitcher" style="margin-top: 5px; ">
+                    <option value="">Español</option>
+                    <option value="">English</option>
+                    <option value="">Germany</option>
+                </select>
+            </li>
+            <!--ICONO DE CAMBIO DE IDIOMA-->
+            <li><img style="margin-left: 500px;" src="Logo.png" width="40"></li>
+            <li><a href="./páginaempresa.html">Inicio</a></li>
+            <li><a href="./Sobremi.html">Sobre mi</a></li>
+            <li><a href="./productos.html" style="color: burlywood;">Productos</a></li>
+            <li><a href="./primerdep.html">Pedidos</a></li>
+            <li><a href="./faq.html">FAQ</a></li>
+            <li style="float: right;">
+                <a href="https://www.google.es/maps/place/Karlsruhe,+Alemania/@49.0159324,8.3271333,12z/data=!3m1!4b1!4m6!3m5!1s0x47970648a2e07809:0xb6fc55734cb7ee7f!8m2!3d49.0068901!4d8.4036527!16zL20vMHFiMXo?entry=ttu">
+                <img src="https://cdn.icon-icons.com/icons2/3765/PNG/512/map_pin_pushpin_location_icon_231231.png" width="22">Karlsruhe</a>
+            </li>
+        </ul>
+    </h5>
+    <h2>PÁGINA DE REFERENCIAS</h2>
+    <p style="text-align: center;">Clica en el siguiente enlace para ver listas con los precios de los productos</p>   
+    <li><a href="./listas.html">LISTAS</a></li>
+
+    <h3>Especialistas en :</h3>
+    <ul>
+        <li><span style="color: burlywood;">Impresión de miniaturas y figuras</span></li>
+        <br>
+        <li><span style="color: burlywood;">Impresión de cosplay</span></li>
+        <br>
+        <li><span style="color: burlywood;">Impresión de juegos de mesa y videojuegos</span></li>
+        <br>
+    </ul>
+    <div class="card">
+        <div class="card-overlay"></div>
+            <div id="productos">
+                <div>
+                    <img src="1.jpeg" width="400">
+                    <p>LOL Cosplay</p>
+                </div>
+                <div>
+                    <img src="2.jpeg" width="400">
+                    <p>Armas Valorant</p>
+                </div>
+                <div>
+                    <img src="3.jpeg" width="400">
+                    <p>Pistolas Overwatch</p>
+                </div>
+                <div>
+                    <img src="4.jpeg" width="400">
+                    <p>Armas CSGO</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center;"></a><button>PIDE EL TUYO</button><a href="primerdep.html"></a></div>
+    
+    <!--SECCION DE ENLACES ÚTILES Y COPYRIGHT-->
+    <footer>
+        <div id="Avisolegal">
+            <h4>Enlaces útiles</h4>
+            <ul>
+                <li><a href="#aviso-legal">Aviso Legal</a></li>
+                <li><a href="#condiciones-servicio">Condiciones del Servicio</a></li>
+                <li><a href="#politica-cookies">Política de Cookies</a></li>
+                <li><a href="#privacidad">Política de Privacidad</a></li>
+                <li><a href="#seguridad">Seguridad</a></li>
+            </ul>
+        </div>
+        <p id="copy">&copy;RGR 3D DRUCK SERVICES. Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
