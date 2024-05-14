@@ -1,0 +1,402 @@
+body {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #314154;
+}
+.text-body {
+   color: rgb(134, 134, 134);
+}
+.text-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.cartas {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+   
+}
+.cartasarriba .cardent {
+    margin-right: 20px;
+    margin-top: 100px;
+}
+  
+.cartasabajo .cardent {
+    margin-right: 20px;
+}
+  
+.cardent:hover .cardent-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+}
+.cardent {
+   width: 190px;
+   height: 254px;
+   border-radius: 20px;
+   background: #f5f5f5;
+   position: relative;
+   padding: 20px;
+   border: 2px solid #c3c6ce;
+   transition: 0.5s ease-out;
+   overflow: visible;
+}
+  
+.cardent-details {
+   color: black;
+   height: 100%;
+   gap: .5em;
+   display: grid;
+   place-content: center;
+}
+  
+.cardent-button {
+   transform: translate(-50%, 125%);
+   width: 60%;
+   border-radius: 1rem;
+   border: none;
+   background-color: #00f8f8;
+   color: #fff;
+   font-size: 1rem;
+   padding: .5rem 1rem;
+   position: absolute;
+   left: 50%;
+   bottom: 0;
+   opacity: 0;
+   transition: 0.3s ease-out;
+   cursor: pointer;
+}
+/*Hover*/
+.cardent:hover {
+   border-color: #00f8f8;
+   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+.cardent:hover .cardent-button {
+   transform: translate(-50%, 50%);
+   opacity: 1;
+}
+/*FIN DE LA CARTA DE ENTORNOS*/
+/* CARTA DOCKER ENTORNOS */
+.cartadocker-container {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+  
+.cartadocker {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+  
+.cartadocker .front-content {
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+}
+  
+.cartadocker .front-content p {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 1;
+    background: linear-gradient(-45deg, #436f88 0%, #1320c9 100% );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+}
+  
+.cartadocker .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(-45deg, #4f9b9b 0%, #0961d4 100% );
+    color: #e8e8e8;
+    padding: 20px;
+    line-height: 1.5;
+    border-radius: 5px;
+    pointer-events: none;
+    transform: translateY(96%);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+  
+.cartadocker .content .heading {
+    font-size: 25px;
+    font-weight: 700;
+}
+  
+.cartadocker:hover .content {
+    transform: translateY(0);
+}
+  
+.cartadocker:hover .front-content {
+    transform: translateY(-30%);
+}
+  
+.cartadocker:hover .front-content p {
+    opacity: 0;
+}
+  /* CARTA GIT ENTORNOS */
+  .cartagit-container {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .cartagit {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+  }
+  
+  .cartagit .front-content {
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+  }
+  
+  .cartagit .front-content p {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 1;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+  }
+  
+  .cartagit .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(-45deg, #e21010 0%, #ac7373 100% );
+    color: #e8e8e8;
+    padding: 20px;
+    line-height: 1.5;
+    border-radius: 5px;
+    pointer-events: none;
+    transform: translateY(96%);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .cartagit .content .heading {
+    font-size: 25px;
+    font-weight: 700;
+  }
+  
+  .cartagit:hover .content {
+    transform: translateY(0);
+  }
+  
+  .cartagit:hover .front-content {
+    transform: translateY(-30%);
+  }
+  
+  .cartagit:hover .front-content p {
+    opacity: 0;
+  }
+  /* CARTA JUNIT ENTORNOS */
+  .cartajunit-container {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .cartajunit {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+  }
+  
+  .cartajunit .front-content {
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+  }
+  
+  .cartajunit .front-content p {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 1;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+  }
+  
+  .cartajunit .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(-45deg, #70c23a 0%, #ff0f7b 100% );
+    color: #e8e8e8;
+    padding: 20px;
+    line-height: 1.5;
+    border-radius: 5px;
+    pointer-events: none;
+    transform: translateY(96%);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .cartajunit .content .heading {
+    font-size: 25px;
+    font-weight: 700;
+  }
+  
+  .cartajunit:hover .content {
+    transform: translateY(0);
+  }
+  
+  .cartajunit:hover .front-content {
+    transform: translateY(-30%);
+  }
+  
+  .cartajunit:hover .front-content p {
+    opacity: 0;
+  }
+  .bodyprogramacion {
+    background-color: #314154;
+    font-family: Poppins;
+  }
+  .header {
+    position: relative;
+    padding-top: 15%;
+  }
+  
+  .blurry-background {
+    overflow: hidden;
+  }
+  
+  .blurry-background img {
+    filter: blur(5px);
+    background-size: contain 100%;
+  }
+  
+  .centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: 'Poppins';
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  /* Estilos para el botón Volver */
+  .volver-button {
+    position: absolute;
+    top: 20px;
+    left: 985px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white; 
+    font-family: 'Poppins';
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    z-index: 1; /* Asegura que esté por encima de la imagen */
+    margin: 10px;
+  }
+  
+  .volver-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Cambia el color de fondo al pasar el ratón sobre el botón */
+  }
+  button {
+    /* Variables */
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
+    margin-top: 40px;
+  }
+  
+  .button_top {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+  }
+  
+  button:hover .button_top {
+    /* Pull the button upwards when hovered */
+    transform: translateY(-0.33em);
+  }
+  
+  button:active .button_top {
+    /* Push the button downwards when pressed */
+    transform: translateY(0);
+  }
+  .botones {
+    display: flex;
+    justify-content: center;
+    gap: 12%;
+  }
+  .boton1 {
+    display: flex;
+    justify-content: center;
+    margin-left: 50%;
+  }
+  .boton2 {
+    
+  }
+  .boton3 {
+    margin-right: 50%;
+  }
