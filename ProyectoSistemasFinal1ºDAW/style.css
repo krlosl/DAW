@@ -13,6 +13,7 @@ body {
   position: absolute;
   top: 30px;
   left: 38%;
+  font-size: 40px;
 }
 .cartasarriba {
   display: flex;
@@ -361,4 +362,3 @@ button:active .button_top {
   display: flex;
   gap: 5px;
 }
-

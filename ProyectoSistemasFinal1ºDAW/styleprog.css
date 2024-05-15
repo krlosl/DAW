@@ -14,7 +14,7 @@ body {
   }
   .header {
     position: relative;
-    padding-top: 25%;
+    padding-top: 30%;
   }
   
   .blurry-background {
@@ -41,8 +41,8 @@ body {
   /* Estilos para el botón Volver */
   .volver-button {
     position: absolute;
-    top: 20px;
-    left: 570px;
+    top: 15px;
+    left: 425px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white; 
     font-family: 'Poppins';
@@ -322,7 +322,7 @@ body {
   .botones {
     display: flex;
     justify-content: center;
-    gap: 12%;
+    gap: 23%;
   }
   .boton1 {
     display: flex;
