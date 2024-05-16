@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Docs Sistemas</title>
+</head>
+<style>
+body {
+    font-family: Poppins;
+    color: white;
+}
+</style>
+<body style="background-color: #212322;">
+    <h2>Como instalar ubuntu server</h2>
+    <p>Descarga la ISO de la web oficial de ubuntu</p>
+    <p>Cambia la ruta de configuración a <code style="color: green; background-color: #343836;">ubuntu.cica</code>
+    <p>Siguiendo la instalación, crea un nuevo usuario y contraseña</p>
+    <h2>Configurar el netplan</h2>
+    <p>Edita el archivo de configuración ubicado en <code style="color: green; background-color: #343836;">/etc/netplan</code></p>
+    <p><code style="color: green; background-color: #343836;">sudo nano /etc/netplan/"nombre del archivo"</code></p>
+    <p>Cambia la dirección IP a la de tu servidor</p>
+    <p>aplica el netplan con <code  style="color: green; background-color: #343836;">sudo netplan apply</code></p>
+    <h2>Instalar apache2</h2>
+    <p>ejecuta el comando <code  style="color: green; background-color: #343836;">sudo apt install apache2</code></p>
+    <h2>Configuración de las direcciones web de tu servidor</h2>
+    <p>Entra en <code style="color: green; background-color: #343836;">/etc/apache2/sites-available</code></p>
+    <p>Haz copypaste del archivo <code style="color: green; background-color: #343836;">000-default</code> , y cambiale el nombre al de tu dominio</p>
+    <p>edita el archivo con cualquier editor de texto e introduce tu IP en la primera linea del archivo <code style="color: green; background-color: #343836;">(VirtualHost 192.168.5.56)</code></p>
+    <p>Ejecuta <code style="color: green; background-color: #343836;">sudo service apache2 restart</code> para reinciar el servicio y aplicar los cambios que has realizado</p>
+    <h2>Instalar vsftpd</h2>
+    <p>ejecutamos el comando <code style="color: green; background-color: #343836;">sudo apt install vsftpd</code></p>
+    <p>entramos en <code style="color: green; background-color: #343836;">/etc/vsftpd.conf</code> y editamos el archivo</p>
+    <p>descomentamos las siguientes lineas</p>
+    <p><code style="color: green; background-color: #343836;">write_enable=YES</code></p>
+    <p><code style="color: green; background-color: #343836;">chroot_local_user=YES</code></p>
+    <p><code style="color: green; background-color: #343836;">local_root=/web</code></p>
+    <p><code style="color: green; background-color: #343836;">pasv_nin_port=40000</code></p>
+    <p><code style="color: green; background-color: #343836;">pasv_max_port=50000</code></p>
+    <p><code style="color: green; background-color: #343836;">userlist_enable=YES</code></p>
+    <p><code style="color: green; background-color: #343836;">userlist_file=/etc/vsftpd.userlist</code></p>
+    <p><code style="color: green; background-color: #343836;">userlist_deny=NO</code></p>
+    <p>ejecutamos el comando <code style="color: green; background-color: #343836;">sudo service vsftpd restart</code> para reiniciar el servicio y aplicar los cambios</p>
+    <h1>Segundo servidor</h1>
+    <p>Seguimos los mismos pasos para la instalación que con el servidor uno</p>
+    <p>volvemos a cambiar el netplan ubicado en la misma ruta</p>
+    <h2>Instalamos bind9</h2>
+    <p>Ejecutamos <code style="color: green; background-color: #343836;">sudo apt install bind9</code></p>
+    <h2>Instalación y configuración del DNS</h2>
+    <p>nos dirigimos a la ruta <code style="color: green; background-color: #343836;">/etc/bind</code></p>
+    <p>con un editor de texto editamos el archivo <code style="color: green; background-color: #343836;">named.conf.local</code></p>
+    <p>cambiamos la estructura y la hacemos parecida a esta</p>
+    <p>copiamos el archivo y le cambiamos el nombre al que será el nombre de nuestra web</p>
+    <p><code style="color: green; background-color: #343836;">cp db.local db."tunombre".local</code></p>
+    <p>editamos el archivo y cambiamos la ip del servidor dos y la del dominio</p>
+    <h2>Cliente</h2>
+    <p>modificamos /etc/hosts</p>
+    <p>agregamos nuestra ip más el nombre de nuestro dominio</p>
+    <p>entramos al archivo /etc/resolv.conf</p>
+    <p>al final del archivo modificamos 127.0.0.53 por nuestra ip</p>
+</body>
+</html>
